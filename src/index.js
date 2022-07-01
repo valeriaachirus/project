@@ -1,24 +1,41 @@
 /* eslint-disable react/jsx-no-undef */
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom/client";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router,
-Switch,
-Route,
-useParams} from "react-router-dom";
+import About from './Pages/About'
+import Service from './Pages/Service'
+import Product from './Pages/Product'
+import Home from './Pages/Home'
+import Basket from './Pages/Basket'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-
-ReactDOM.render(
-  <BrowserRouter>
-     <App />
- </BrowserRouter>,
-document.getElementById('root')
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
 );
 
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+root.render(
+  
+  <BrowserRouter>
+    <Routes>
+      
+        <Route path="/" element={<Home />} />
+        <Route path='about' element={<About />} />
+        <Route path='service' element={<Service />} />
+        <Route path='basket' element={<Basket />} />
+        <Route path="product" element={<Product />}>
+          <Route path=":productId" element={<Product />} />
+        </Route>
+      
+    </Routes>
+  </BrowserRouter>
+);
+
+
 reportWebVitals();
