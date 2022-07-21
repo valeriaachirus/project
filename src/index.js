@@ -1,11 +1,15 @@
 /* eslint-disable react/jsx-no-undef */
 import React from 'react';
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import './index.css';
 import App from './App';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import Card from './Pages/Cards/CardUI';
+import Cards from './Pages/Cards/Cards';
 import reportWebVitals from './reportWebVitals';
-import About from './Pages/About'
-import Service from './Pages/Service'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import OurTeam from './Pages/OurTeam'
+import Contact from './Pages/Contact'
 import Product from './Pages/Product'
 import Home from './Pages/Home'
 import Basket from './Pages/Basket'
@@ -26,8 +30,8 @@ root.render(
     <Routes>
       
         <Route path="/" element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='service' element={<Service />} />
+        <Route path='about' element={<OurTeam />} />
+        <Route path='service' element={<Contact />} />
         <Route path='basket' element={<Basket />} />
         <Route path="product" element={<Product />}>
           <Route path=":productId" element={<Product />} />
